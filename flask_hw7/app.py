@@ -1,10 +1,13 @@
+import pandas as pd
 import requests
 from faker import Faker
 from flask import Flask
-from flask_hw7.constants import DATA_FRAME
 from flask_hw7.settings import ROOT_PATH
+from typing import Final
+
 
 app = Flask(__name__)
+DATA_FRAME: Final[pd.DataFrame] = pd.read_csv("flask_hw7/people_data.csv")
 fake = Faker()
 
 
@@ -19,7 +22,7 @@ def show_requirements():
 @app.route('/generate-users/<int:num_of_users>')
 def generate_random_users(num_of_users: int) -> str:
     users_list = [
-        f"""<p>{fake.name().split(" ")[0]} example@mail.com</p>"""
+        f"""<p>{fake.first_name()} {fake.ascii_email().lower()}</p>"""
         for _ in range(num_of_users)]
     return "".join(users_list)
 
@@ -27,8 +30,8 @@ def generate_random_users(num_of_users: int) -> str:
 @app.route('/space')
 def show_num_of_astros() -> str:
     url = "http://api.open-notify.org/astros.json"
-    get_request = requests.request("GET", url).json()
-    return f"At the moment we have: {get_request['number']} active astronauts."
+    response_in_json = requests.request("GET", url).json()
+    return f"At the moment we have: {response_in_json['number']} active astronauts."
 
 
 @app.route('/mean')
