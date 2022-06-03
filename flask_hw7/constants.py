@@ -1,5 +1,1 @@
-import pandas as pd
-from typing import Final
-
-
-DATA_FRAME = pd.read_csv("flask_hw7/people_data.csv")
+"""Here will be constants that will be used more than once in the project"""
