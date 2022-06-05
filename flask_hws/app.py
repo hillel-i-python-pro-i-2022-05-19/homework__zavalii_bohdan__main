@@ -8,11 +8,17 @@ from flask import Flask
 from webargs import fields
 from webargs.flaskparser import use_args
 
-from flask_hw7.settings import ROOT_PATH, DB_PATH
+from flask_hws.settings import ROOT_PATH, DB_PATH
 
 app = Flask(__name__)
 DATA_FRAME: Final[pd.DataFrame] = pd.read_csv(f"{ROOT_PATH}/people_data.csv")
 fake = Faker()
+
+
+@app.route('/')
+def welcome_message():
+    return """<h2><strong>Hi there!</strong></h2> 
+    <p>Hope you have a <i>blessed</i> day!</p>"""
 
 
 class Connection:
