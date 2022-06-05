@@ -1,1 +1,0 @@
-"""Here will be constants that will be used more than once in the project"""
