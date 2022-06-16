@@ -1,0 +1,6 @@
+# Ignore all
+**
+
+# Exclude
+!flask_hws
+!requirements.txt
