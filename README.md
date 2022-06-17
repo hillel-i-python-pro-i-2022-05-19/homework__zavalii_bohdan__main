@@ -13,7 +13,15 @@ pip install --requirement requirements.txt
 
 ### Run with Docker
 
-You can also run the app via Docker. To do that, please run the following
+Please, ensure that you have an installed Docker and docker-compose on your
+local machine. In case you don't have ones, you can install it via the:
+
+```shell
+sudo snap install docker
+sudo apt install docker-compose
+```
+
+You can also run the app via the following command. To do that, please run the
 command in the console:
 
 ```shell
