@@ -95,7 +95,7 @@ def phones_delete(phoneID):
 
 @app.route('/requirements')
 def show_requirements():
-    with open(f"{ROOT_PATH}/requirements.txt", "r") as f:
+    with open(f"requirements.txt", "r") as f:
         return f.read(-1)
     # return ROOT_PATH.joinpath('requirements.txt').read_text()
 
