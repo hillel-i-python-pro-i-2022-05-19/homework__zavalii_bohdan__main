@@ -97,7 +97,6 @@ def phones_delete(phoneID):
 def show_requirements():
     with open(f"requirements.txt", "r") as f:
         return f.read(-1)
-    # return ROOT_PATH.joinpath('requirements.txt').read_text()
 
 
 @app.route('/generate-users', defaults={'num_of_users': 100})
