@@ -1,0 +1,3 @@
+# Pytest
+pytest==7.1.2
+pytest-benchmark==3.4.1
